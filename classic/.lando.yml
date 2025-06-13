@@ -1,0 +1,11 @@
+name: frankenphp
+proxy:
+  web:
+    - frankenphp.lndo.site
+services:
+  web:
+    type: lando
+    api: 3
+    services:
+      image: dunglas/frankenphp:php8.4-alpine
+      command: frankenphp run
