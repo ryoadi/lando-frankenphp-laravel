@@ -1,0 +1,14 @@
+name: frankenphp
+proxy:
+  web:
+    - frankenphp.lndo.site:8000
+services:
+  web:
+    type: lando
+    api: 3
+    services:
+      image: dunglas/frankenphp:php8.4-alpine
+      command: php artisan octane:start
+    build_as_root:
+      - docker-php-ext-configure pcntl --enable-pcntl
+      - docker-php-ext-install pcntl
